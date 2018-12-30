@@ -6,5 +6,8 @@ app_name = 'basic_app'
 
 urlpatterns = [
   url(r'^$', views.SchollListView.as_view(), name="list"),
-  url(r'^(?P<pk>[-\w]+)/$', views.SchoolDetailView.as_view(),name='detail')
+  url(r'^(?P<pk>\d+)/$', views.SchoolDetailView.as_view(),name='detail'),
+  url(r'^create/$', views.SchoolCreateView.as_view(),name='create'),
+  url(r'^(?P<pk>\d+)/update/$', views.SchoolUpdateView.as_view(),name='update'),
+  url(r'^(?P<pk>\d+)/delete/$', views.SchoolDeleteView.as_view(),name='delete'),
 ]
